@@ -129,7 +129,7 @@ form button:hover {
 }
 
 @media only screen and (min-width: 768px) {
-  content {
+  section {
     display: flex;
     flex-direction: row-reverse;
     height: 100vh;
@@ -234,7 +234,7 @@ form button:hover {
   form button {
     right: 57%;
     width: 7%;
-  }
+  }section
 }
 
 .attribution { 
