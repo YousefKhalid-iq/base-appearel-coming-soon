@@ -20,15 +20,18 @@ main {
   margin: 7% 3%;
 }
 
-.hero-img {
+.hero-img-mobile {
   width: 100%;
+}
+
+.hero-img-desktop {
+  display: none;
 }
 
 h1 {
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
-  width: 60%;
   margin: 0 auto;
   color: hsl(0, 6%, 24%);
   letter-spacing: 0.6rem;
@@ -72,7 +75,6 @@ form button {
   border-width: 0;
   box-shadow: -2px 4px 20px hsl(0, 74%, 74%);
   cursor: pointer;
-  transition: 0.3s ease-in-out;
 }
 
 form button:hover {
@@ -92,6 +94,10 @@ form button:hover {
   margin: 3% 0% -2% 8%;
   font-size: 0.7rem;
   color: hsl(0, 93%, 68%);
+}
+
+.email-input:focus:invalid~form button {
+  box-shadow: -2px 4px 20px hsl(0, 10%, 74%);
 }
 
 .email-input:focus:invalid {
@@ -122,9 +128,119 @@ form button:hover {
   visibility: hidden;
 }
 
+@media only screen and (min-width: 768px) {
+  content {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+
+  .header-img {
+    position: absolute;
+    width: 50%;
+    left: 0;
+    background: transparent;
+    margin: 0 10%;
+  }
+
+  .hero-img-mobile {
+    display: none;
+  }
+
+  .hero-img-cont {
+    width: 40%;
+  }
+
+  .hero-img-desktop {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-content {
+    margin-top: 10%;
+    width: 60%;
+  }
+
+  h1 {
+    text-align: left;
+    margin: 0 18%;
+    width: 50%;
+    font-size: 2.8rem;
+  }
+
+  p {
+    text-align: left;
+    margin: 0 18%;
+    width: 65%;
+    padding-bottom: 5%;
+    font-size: 1rem;
+  }
+
+  form {
+    width: 80%;
+    margin: 0 12%;
+  }
+
+  form button {
+    right: 45%;
+    width: 10%;
+  }
+
+  .email-input:focus:invalid {
+    background-position: 80%;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 5%;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 3.3rem;
+  }
+
+  .email-input:focus:invalid~.email-validation {
+    margin: 1% 0% -2% 8%;
+  }
+
+  form {
+    width: 70%;
+  }
+
+  form button {
+    right: 51%;
+    width: 8%;
+  }
+
+  .email-input:focus:invalid {
+    background-position: 82%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  form {
+    width: 60%;
+  }
+
+  form button {
+    right: 57%;
+    width: 7%;
+  }
+}
+
 .attribution { 
   font-size: 11px; text-align: center;
-  padding-bottom: 5%;
+  padding-top: 3%;
+  padding-bottom: 0;
 }
 
 .attribution a { 
